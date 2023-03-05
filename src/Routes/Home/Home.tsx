@@ -5,12 +5,6 @@ import Background from '../../Components/Background/Background';
 import {useNavigation} from '@react-navigation/native';
 import {RootDrawerParamList} from '../../Interfaces/Interfaces';
 import AppIcon from '../../Components/Icons/AppIcon/AppIcon';
-import Button from '../../Components/Buttons/ButtonCentered/ButtonCentered';
-import HomeIcon from '../../Components/Icons/HomeIcon/HomeIcon';
-import AddIcon from '../../Components/Icons/AddIcon/AddIcon';
-import UserIcon from '../../Components/Icons/UserIcon/UserIcon';
-import LoginIcon from '../../Components/Icons/LoginIcon/LoginIcon';
-import SignupIcon from '../../Components/Icons/SignupIcon/SignupIcon';
 
 export interface props {}
 
