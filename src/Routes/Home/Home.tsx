@@ -2,14 +2,9 @@ import * as React from 'react';
 import {View, Text} from 'react-native';
 import styles from '../../styles';
 import Background from '../../Components/Background/Background';
-import {useNavigation} from '@react-navigation/native';
-import {RootDrawerParamList} from '../../Interfaces/Interfaces';
 import AppIcon from '../../Components/Icons/AppIcon/AppIcon';
 
-export interface props {}
-
-export default function Home(props: props) {
-  const navigation = useNavigation<RootDrawerParamList>();
+export default function Home() {
   return (
     <Background>
       <View

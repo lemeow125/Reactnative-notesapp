@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Text, View, Pressable, GestureResponderEvent } from "react-native";
-import { StyleSheet } from "react-native";
-import styles from "../../../styles";
+import * as React from 'react';
+import {Text, View, Pressable, GestureResponderEvent} from 'react-native';
+import {StyleSheet} from 'react-native';
+import styles from '../../../styles';
 
 export interface props {
   children: React.ReactNode;
@@ -12,67 +12,63 @@ export interface props {
 
 export default function ButtonAlignLeft(props: props) {
   switch (props.color) {
-    case "Red":
+    case 'Red':
       return (
         <Pressable
           onPress={props.onPress}
           style={{
-            ...styles.button_baseline,
+            ...styles.button_generic,
             ...{
-              backgroundColor: "#bc231e",
+              backgroundColor: '#bc231e',
               width: props.width,
-              justifyContent: "flex-start",
+              justifyContent: 'flex-start',
             },
-          }}
-        >
+          }}>
           {props.children}
         </Pressable>
       );
-    case "Yellow":
+    case 'Yellow':
       return (
         <Pressable
           onPress={props.onPress}
           style={{
-            ...styles.button_baseline,
+            ...styles.button_generic,
             ...{
-              backgroundColor: "#e2b465",
+              backgroundColor: '#e2b465',
               width: props.width,
-              justifyContent: "flex-start",
+              justifyContent: 'flex-start',
             },
-          }}
-        >
+          }}>
           {props.children}
         </Pressable>
       );
-    case "Green":
+    case 'Green':
       return (
         <Pressable
           onPress={props.onPress}
           style={{
-            ...styles.button_baseline,
+            ...styles.button_generic,
             ...{
-              backgroundColor: "#0dbc6a",
+              backgroundColor: '#0dbc6a',
               width: props.width,
-              justifyContent: "flex-start",
+              justifyContent: 'flex-start',
             },
-          }}
-        >
+          }}>
           {props.children}
         </Pressable>
       );
-    case "Blue":
+    case 'Blue':
       return (
         <Pressable
           onPress={props.onPress}
           style={{
-            ...styles.button_baseline,
+            ...styles.button_generic,
             ...{
-              backgroundColor: "#005997",
+              backgroundColor: '#005997',
               width: props.width,
-              justifyContent: "flex-start",
+              justifyContent: 'flex-start',
             },
-          }}
-        >
+          }}>
           {props.children}
         </Pressable>
       );
@@ -81,11 +77,10 @@ export default function ButtonAlignLeft(props: props) {
     <Pressable
       onPress={props.onPress}
       style={{
-        ...styles.button_baseline,
-        ...{ backgroundColor: "#bc231e" },
-      }}
-    >
-      <Text style={{ ...styles.text_white, ...{ fontSize: 32 } }}>
+        ...styles.button_generic,
+        ...{backgroundColor: '#bc231e'},
+      }}>
+      <Text style={{...styles.text_white, ...{fontSize: 32}}}>
         Invalid button color specified
       </Text>
     </Pressable>
