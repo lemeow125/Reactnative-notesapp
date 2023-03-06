@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+
+
 const styles = StyleSheet.create({
   background: {
     backgroundColor: '#002d4c',
@@ -29,6 +31,52 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+  },
+ 
+  inputView: {
+    backgroundColor: "skyblue",
+    borderRadius: 30,
+    width: "70%",
+    height: 45,
+    marginBottom: 20,
+    
+  },
+  TextInput: {
+    height: 50,
+    flex: 1,
+    padding: 10,
+    marginLeft: 5,
+  },
+  forgot_button: {
+    fontWeight: 'bold',
+    color: 'white',
+    height: 30,
+    marginBottom: 30,
+  },
+  loginBtn: {
+    width: "50%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+    backgroundColor: "skyblue",
+  },
+  loginText:{
+    color: '#003f5c',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  container: {
+    marginTop: 200,
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
