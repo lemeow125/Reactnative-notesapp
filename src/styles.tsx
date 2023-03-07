@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
  
   inputView: {
-    backgroundColor: "skyblue",
+    backgroundColor: "black",
     borderRadius: 30,
     width: "70%",
     height: 45,
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     
   },
   TextInput: {
+    color: 'white',
     height: 50,
     flex: 1,
     padding: 10,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     height: 30,
-    marginBottom: 30,
+    marginBottom: 10,
   },
   loginBtn: {
     width: "50%",
@@ -64,19 +65,43 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 30,
-    backgroundColor: "skyblue",
+    backgroundColor: "lightgreen",
+  },
+  registerbtn: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "orange",
   },
   loginText:{
-    color: '#003f5c',
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
   },
+  registertext:{
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    
+  },
   container: {
-    marginTop: 200,
-    flex: 1,
+    marginTop: 30,
+    marginLeft: 22,
+    height: 500,
+    width: 350,
+    borderRadius: 25, 
+    backgroundColor: 'blue',
     alignItems: "center",
     justifyContent: "center",
+  },
+  loginlabel:{
+    fontWeight: 'bold',
+    fontSize: 25,
+    marginBottom: 30,
+    color: 'white',
   },
 });
 
