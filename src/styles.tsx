@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+
+
 const styles = StyleSheet.create({
   background: {
     backgroundColor: '#002d4c',
@@ -29,6 +31,77 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+  },
+ 
+  inputView: {
+    backgroundColor: "black",
+    borderRadius: 30,
+    width: "70%",
+    height: 45,
+    marginBottom: 20,
+    
+  },
+  TextInput: {
+    color: 'white',
+    height: 50,
+    flex: 1,
+    padding: 10,
+    marginLeft: 5,
+  },
+  forgot_button: {
+    fontWeight: 'bold',
+    color: 'white',
+    height: 30,
+    marginBottom: 10,
+  },
+  loginBtn: {
+    width: "50%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "lightgreen",
+  },
+  registerbtn: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "orange",
+  },
+  loginText:{
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  registertext:{
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    
+  },
+  container: {
+    marginTop: 30,
+    marginLeft: 22,
+    height: 500,
+    width: 350,
+    borderRadius: 25, 
+    backgroundColor: 'blue',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  loginlabel:{
+    fontWeight: 'bold',
+    fontSize: 25,
+    marginBottom: 30,
+    color: 'white',
   },
 });
 
