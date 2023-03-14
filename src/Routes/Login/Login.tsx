@@ -8,7 +8,6 @@ import { useState } from "react";
 import {TouchableOpacity,} from "react-native";
 
 
-
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +16,7 @@ export default function Login() {
     <Background>
        <Text style={{...styles.text_white, ...{fontSize: 32}}}></Text>
       <SafeAreaView>
-      <View style={styles.container}>
+      <View style={styles.container}> 
         <Text style ={styles.loginlabel}>Login to Clip Notes</Text>
       <StatusBar style="auto" />
       <View style={styles.inputView}>
@@ -29,7 +28,6 @@ export default function Login() {
             value={username}
           /> 
           </View>   
-        
         <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}

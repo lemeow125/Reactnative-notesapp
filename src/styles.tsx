@@ -1,11 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 
+
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: '#002d4c',
     height: '100%',
     width: '100%',
+    backgroundColor:'#002d4d',
+    position: 'absolute',
   },
   text_white: {
     color: 'white',
@@ -44,7 +46,6 @@ const styles = StyleSheet.create({
     width: "70%",
     height: 45,
     marginBottom: 20,
-    
   },
   TextInput: {
     color: 'white',
@@ -102,6 +103,116 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginBottom: 30,
     color: 'white',
+  },
+  box:{
+    width: '100%',
+    height: 200,
+  },
+  userinfocont:{
+    marginTop: 10,
+    marginLeft: 50,
+    height: 80,
+    width: 300,
+    borderRadius: 25, 
+    backgroundColor: 'orange',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  userlabel:{
+    fontWeight: 'bold',
+    fontSize: 25,
+    marginBottom: 10,
+    color: 'white', 
+  },
+  addnote:{
+    marginLeft: 180,
+    width: "10%",
+    borderRadius: 25,
+    height: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "lightgreen",
+  },
+  addtext:{
+    fontSize: 20,
+    color: 'white',
+  },
+  addnotescont:{
+    marginTop: 20,
+    marginLeft: 20,
+    height: 200,
+    width: 350,
+    backgroundColor: 'blue',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
+  addicon:{ 
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  no: {
+    fontSize: 20,
+    color: 'white',
+    marginTop: 20,
+    alignItems: 'center'
+  },
+  typehere:{
+    backgroundColor: "black",
+    borderRadius: 10,
+    width: "75%",
+    height: 300,
+    marginTop: 20, 
+  },
+  typeinput: {
+    color: 'white',
+    flex: 1,
+    paddingBottom: 250,
+    marginLeft: 5,
+  },
+  title:{
+    color: 'white',
+    flex: 1,
+    marginLeft: 5,
+  },
+  tle:{
+    backgroundColor: "black",
+    borderRadius: 10,
+    width: "80%",
+    height: 40,
+    marginTop: 20,
+  },
+  addnotecont:{
+    marginTop: 30,
+    marginLeft: 22,
+    height: 500,
+    width: 350,
+    borderRadius: 25, 
+    backgroundColor: '#7cb9e8',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  savebtn:{
+    width: "50%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "green",
+  },
+  savenote:{
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  homecont:{
+    marginTop: 30,
+    height: 150,
+    width: 350,
+    borderRadius: 25, 
+    backgroundColor: '#7cb9e8',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
