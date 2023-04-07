@@ -11,7 +11,9 @@ import AddNote from "./src/Routes/AddNote/AddNote";
 import Login from "./src/Routes/Login/Login";
 import Register from "./src/Routes/Register/Register";
 
+
 const Drawer = createDrawerNavigator();
+
 
 export default function App() {
   return (
@@ -26,6 +28,7 @@ export default function App() {
         <Drawer.Screen name="User Info" component={UserInfo} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Register" component={Register} />
+        
       </Drawer.Navigator>
     </NavigationContainer>
   );

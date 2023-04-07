@@ -5,11 +5,14 @@ import Background from '../../Components/Background/Background';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from "react";
 import {TouchableOpacity,} from "react-native";
-
+import { RootDrawerParamList } from "../../Interfaces/Interfaces";
+import { useNavigation } from "@react-navigation/native";
 
 export default function AddNote() {
   const [addnote, setNote] = useState("");
+  const [addtitle, setTitle] = useState("");
   
+  const navigation = useNavigation<RootDrawerParamList>();
 
   return (
     <Background>
@@ -21,8 +24,8 @@ export default function AddNote() {
             style={styles.title}
             placeholder="Title"
             placeholderTextColor="white"
-            onChangeText={setNote} 
-            value={addnote}
+            onChangeText={setTitle} 
+            value={addtitle}
           />
         </View>   
         <View style={styles.typehere}> 
@@ -31,13 +34,20 @@ export default function AddNote() {
             placeholder="Type here...."
             placeholderTextColor="white"
             onChangeText={setNote} 
-            value={addnote}
+            value={addnote} 
           /> 
        </View>
       <TouchableOpacity style={styles.savebtn}>
       <Text style={styles.savenote}>SAVE</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.cancelbtn}
+       onPress={() => {
+        navigation.navigate("Home");  
+      }}>
+      <Text style={styles.cancel}>CANCEL</Text>
+      </TouchableOpacity>
       </View>
+      
       </SafeAreaView>
     </Background>
   );

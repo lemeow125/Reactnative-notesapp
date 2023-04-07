@@ -6,12 +6,14 @@ import { SafeAreaView} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {TouchableOpacity,} from "react-native";
-
+import { RootDrawerParamList } from "../../Interfaces/Interfaces";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigation = useNavigation<RootDrawerParamList>();
   return (
     <Background>
        <Text style={{...styles.text_white, ...{fontSize: 32}}}></Text>
@@ -45,7 +47,10 @@ export default function Login() {
       <TouchableOpacity style={styles.loginBtn}>
       <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.registerbtn}>
+      <TouchableOpacity style={styles.registerbtn}
+      onPress={() => {
+        navigation.navigate("Register");  
+      }}>
       <Text style={styles.registertext}>REGISTER</Text>
       </TouchableOpacity>
       </View>

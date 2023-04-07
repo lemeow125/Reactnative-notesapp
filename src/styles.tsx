@@ -146,10 +146,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
-  addicon:{ 
-    alignItems: 'center',
-    marginTop: 5,
-  },
   no: {
     fontSize: 20,
     color: 'white',
@@ -192,15 +188,29 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   savebtn:{
-    width: "50%",
+    width: "40%",
     borderRadius: 25,
-    height: 50,
+    height: 40,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
+    marginTop: 10,
+    backgroundColor: "green",
+  },
+  cancelbtn:{
+    width: "40%",
+    borderRadius: 25,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
     backgroundColor: "green",
   },
   savenote:{
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  cancel:{
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
@@ -214,6 +224,55 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  newnote:{
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 50,
+  },
+  //
+  form: {
+    flex: 1,
+    alignItems: "center",
+  },
+  inputRow: {
+    width: "60%",
+    height: 50,
+    marginTop: 50,
+    marginLeft:10,
+    justifyContent: "center",
+  },
+  label: {
+    marginBottom: 5,
+    marginLeft: 5,
+    fontSize: 20,
+    color: "white",
+  },
+  disabledInput: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    
+  },
+  editButton: {
+    backgroundColor: "green",
+    width: "20%",
+    borderRadius: 25,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+    marginLeft: 20
+  },
+  buttonText:{
+    color: "white",
+  },
+  inputUser:{
+    marginLeft: 10,
+    height: 40,
+    width: "100%",
+    color: "black",
+    backgroundColor: "white",
+    borderRadius: 10,
+  }
 });
 
 export default styles;
