@@ -16,7 +16,7 @@ import {
 } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { SetUser } from "../../Features/Redux/Slices/LoggedInUserSlice/LoggedInUserSlice";
-import { SetLoggedIn } from "../../Features/Redux/Slices/LoginSlice/LoginSlice";
+import { SetLoggedIn } from "../../Features/Redux/Store/LoginSlice";
 import { UserInfo, UserLogin } from "../../Components/Api/Api";
 import { RootDrawerParamList } from "../../Interfaces/Interfaces";
 
