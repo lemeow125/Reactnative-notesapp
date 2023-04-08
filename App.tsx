@@ -10,6 +10,9 @@ import UserInfo from "./src/Routes/UserInfo/UserInfo";
 import AddNote from "./src/Routes/AddNote/AddNote";
 import Login from "./src/Routes/Login/Login";
 import Register from "./src/Routes/Register/Register";
+import { Provider } from "react-redux";
+import Store from "./src/Features/Redux/Store/Store";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 
 const Drawer = createDrawerNavigator();
@@ -17,6 +20,7 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
+  <Provider store={Store}>
     <NavigationContainer>
       <Drawer.Navigator
         initialRouteName="Home"
@@ -31,5 +35,6 @@ export default function App() {
         
       </Drawer.Navigator>
     </NavigationContainer>
+  </Provider>
   );
 }
