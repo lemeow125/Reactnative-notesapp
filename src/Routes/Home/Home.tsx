@@ -3,8 +3,9 @@ import {View, Text} from 'react-native';
 import styles from '../../styles';
 import Background from '../../Components/Background/Background';
 import AppIcon from '../../Components/Icons/AppIcon/AppIcon';
-
+import { useDispatch } from "react-redux";
 export default function Home() {
+  const dispatch = useDispatch();
   return (
     <Background>
       <View

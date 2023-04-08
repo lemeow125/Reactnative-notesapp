@@ -103,6 +103,12 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     color: 'white',
   },
+  text_small_red: {
+    color: "#bc231e",
+    fontSize: 10,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });
 
 export default styles;
