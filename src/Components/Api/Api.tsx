@@ -9,10 +9,14 @@ import {
 
 // Note APIs
 
+const instance = axios.create({
+  baseURL: "https://keannu126.pythonanywhere.com",
+});
+
 export function GetNotes() {
   const token = JSON.parse(localStorage.getItem("token") || "{}");
-  return axios
-    .get("http://localhost:8000/api/v1/notes/", {
+  return instance
+    .get("api/v1/notes/", {
       headers: {
         Authorization: "Token " + token,
       },
@@ -24,8 +28,8 @@ export function GetNotes() {
 
 export function GetNote(id: number) {
   const token = JSON.parse(localStorage.getItem("token") || "{}");
-  return axios
-    .get("http://localhost:8000/api/v1/notes/" + id + "/", {
+  return instance
+    .get("api/v1/notes/" + id + "/", {
       headers: {
         Authorization: "Token " + token,
       },
@@ -37,8 +41,8 @@ export function GetNote(id: number) {
 
 export function UpdateNote(note: UpdateNoteParams) {
   const token = JSON.parse(localStorage.getItem("token") || "{}");
-  return axios
-    .patch("http://localhost:8000/api/v1/notes/" + note.id + "/", note, {
+  return instance
+    .patch("api/v1/notes/" + note.id + "/", note, {
       headers: {
         Authorization: "Token " + token,
       },
@@ -54,8 +58,8 @@ export function UpdateNote(note: UpdateNoteParams) {
 
 export function AddNote(note: AddNoteParams) {
   const token = JSON.parse(localStorage.getItem("token") || "{}");
-  return axios
-    .post("http://localhost:8000/api/v1/notes/", note, {
+  return instance
+    .post("api/v1/notes/", note, {
       headers: {
         Authorization: "Token " + token,
       },
@@ -71,8 +75,8 @@ export function AddNote(note: AddNoteParams) {
 
 export function DeleteNote(id: number) {
   const token = JSON.parse(localStorage.getItem("token") || "{}");
-  return axios
-    .delete("http://localhost:8000/api/v1/notes/" + id + "/", {
+  return instance
+    .delete("api/v1/notes/" + id + "/", {
       headers: {
         Authorization: "Token " + token,
       },
@@ -86,8 +90,8 @@ export function DeleteNote(id: number) {
 // User APIs
 
 export function UserRegister(register: RegistrationParams) {
-  return axios
-    .post("http://localhost:8000/api/v1/accounts/users/", register)
+  return instance
+    .post("api/v1/accounts/users/", register)
     .then(async (response) => {
       console.log(response.data);
       return true;
@@ -99,8 +103,8 @@ export function UserRegister(register: RegistrationParams) {
 }
 
 export function UserLogin(user: LoginParams) {
-  return axios
-    .post("http://localhost:8000/api/v1/accounts/token/login/", user)
+  return instance
+    .post("api/v1/accounts/token/login/", user)
     .then(async (response) => {
       localStorage.setItem("token", JSON.stringify(response.data.auth_token));
       console.log(
@@ -117,8 +121,8 @@ export function UserLogin(user: LoginParams) {
 
 export function UserInfo() {
   const token = JSON.parse(localStorage.getItem("token") || "{}");
-  return axios
-    .get("http://localhost:8000/api/v1/accounts/users/me/", {
+  return instance
+    .get("api/v1/accounts/users/me/", {
       headers: {
         Authorization: "Token " + token,
       },
@@ -130,8 +134,8 @@ export function UserInfo() {
 }
 
 export function UserActivate(activation: ActivationParams) {
-  return axios
-    .post("http://localhost:8000/api/v1/accounts/users/activation/", activation)
+  return instance
+    .post("api/v1/accounts/users/activation/", activation)
     .then(async (response) => {
       console.log("Activation Success");
       return true;
