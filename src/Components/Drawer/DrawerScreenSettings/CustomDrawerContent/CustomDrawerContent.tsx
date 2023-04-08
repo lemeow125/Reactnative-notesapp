@@ -44,12 +44,12 @@ export default function CustomDrawerContent(props: {}) {
         color="Green"
         width={width}
         onPress={() => {
-          navigation.navigate("Add Note");
+          navigation.navigate("New Note");
         }}
       >
         <AddIcon size={32} color="white" />
         <Text style={{ ...styles.text_white, ...{ fontSize: 32 } }}>
-          Add Note
+          New Note
         </Text>
       </ButtonAlignLeft>
       <ButtonAlignLeft
