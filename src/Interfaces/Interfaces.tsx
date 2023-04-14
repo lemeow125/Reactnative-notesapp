@@ -30,6 +30,7 @@ export interface NoteProps {
   id: number;
   date_created: Date;
   owner: string;
+  public: boolean;
 }
 
 export interface IconProps {

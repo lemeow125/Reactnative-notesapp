@@ -1,16 +1,22 @@
 import * as React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import styles from "../../styles";
 import Background from "../../Components/Background/Background";
-import AppIcon from "../../Components/Icons/AppIcon/AppIcon";
-import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
-import { RootDrawerParamList } from "../../Interfaces/Interfaces";
+import Notes from "../../Components/Notes/Notes";
+import { Switch } from "react-native-gesture-handler";
+import { useState } from "react";
+import PublicNotes from "../../Components/PublicNotes/Notes";
 
 export default function Home() {
-  const navigation = useNavigation<RootDrawerParamList>();
-
-  const dispatch = useDispatch();
+  const [switchLabel, setLabel] = useState("Viewing public notes");
+  const [togglePublic, setToggled] = useState(true);
+  function Preview() {
+    if (togglePublic) {
+      return <PublicNotes />;
+    } else {
+      return <Notes />;
+    }
+  }
   return (
     <Background>
       <Text style={{ ...styles.text_white, ...{ fontSize: 25 } }}>
@@ -20,22 +26,27 @@ export default function Home() {
         style={{
           display: "flex",
           flexDirection: "row",
+          justifyContent: "flex-start",
+          marginLeft: 16,
           alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <View style={styles.homecont}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("New Note");
-            }}
-          >
-            <Text style={styles.newnote}>+</Text>
-          </TouchableOpacity>
-          <Text style={styles.no}>New note...</Text>
-          <View style={{ margin: 16 }} />
-        </View>
+        <Switch
+          onValueChange={() => {
+            setToggled(!togglePublic);
+            if (togglePublic) {
+              setLabel("Viewing own notes");
+            } else {
+              setLabel("Viewing public notes");
+            }
+          }}
+          value={togglePublic}
+        />
+        <Text style={{ ...styles.text_white, ...{ fontSize: 16 } }}>
+          {switchLabel}
+        </Text>
       </View>
+      <Preview />
     </Background>
   );
 }
