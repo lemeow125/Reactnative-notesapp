@@ -5,13 +5,14 @@ import Background from "../../Components/Background/Background";
 import Notes from "../../Components/Notes/Notes";
 import { Switch } from "react-native-gesture-handler";
 import { useState } from "react";
+import PublicNotes from "../../Components/PublicNotes/Notes";
 
 export default function Home() {
   const [switchLabel, setLabel] = useState("Viewing public notes");
-  const [togglePublic, setToggled] = useState(false);
+  const [togglePublic, setToggled] = useState(true);
   function Preview() {
     if (togglePublic) {
-      return <Text>Viewing public notes</Text>;
+      return <PublicNotes />;
     } else {
       return <Notes />;
     }
