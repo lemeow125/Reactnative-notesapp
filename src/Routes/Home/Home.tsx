@@ -27,7 +27,7 @@ export default function Home() {
         <View style={styles.homecont}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Add Note");
+              navigation.navigate("New Note");
             }}
           >
             <Text style={styles.newnote}>+</Text>
