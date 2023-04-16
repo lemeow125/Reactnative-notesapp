@@ -158,9 +158,10 @@ const styles = StyleSheet.create({
   },
   typeinput: {
     color: "white",
-    flex: 1,
-    paddingBottom: 250,
+    marginBottom: 16,
     marginLeft: 5,
+    minHeight: 128,
+    maxHeight: 768,
   },
   title: {
     color: "white",
@@ -179,7 +180,8 @@ const styles = StyleSheet.create({
   addnotecont: {
     marginTop: 30,
     marginLeft: 22,
-    height: 500,
+    paddingBottom: 30,
+    minHeight: 500,
     width: 350,
     borderRadius: 25,
     backgroundColor: "black",

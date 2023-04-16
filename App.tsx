@@ -13,31 +13,31 @@ import Register from "./src/Routes/Register/Register";
 import { Provider } from "react-redux";
 import Store from "./src/Features/Redux/Store/Store";
 import { QueryClient, QueryClientProvider } from "react-query";
-
+import EditNote from "./src/Routes/EditNote/EditNote";
 
 const Drawer = createDrawerNavigator();
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
-  <Provider store={Store}>
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <Drawer.Navigator
-          initialRouteName="Home"
-          drawerContent={CustomDrawerContent}
-          screenOptions={DrawerScreenSettings}
-        >
-         <Drawer.Screen name="Home" component={Home} />
-         <Drawer.Screen name="New Note" component={NewNote} />
-         <Drawer.Screen name="User Info" component={UserInfo} />
-         <Drawer.Screen name="Login" component={Login} />
-         <Drawer.Screen name="Register" component={Register} />
-         <Drawer.Screen name="LogOut" component={Register} />
-        
-        </Drawer.Navigator>
-      </NavigationContainer>
-    </QueryClientProvider>
-  </Provider>
+    <Provider store={Store}>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <Drawer.Navigator
+            initialRouteName="Home"
+            drawerContent={CustomDrawerContent}
+            screenOptions={DrawerScreenSettings}
+          >
+            <Drawer.Screen name="Home" component={Home} />
+            <Drawer.Screen name="New Note" component={NewNote} />
+            <Drawer.Screen name="User Info" component={UserInfo} />
+            <Drawer.Screen name="Login" component={Login} />
+            <Drawer.Screen name="Register" component={Register} />
+            <Drawer.Screen name="LogOut" component={Register} />
+            <Drawer.Screen name="EditNote" component={EditNote} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
+    </Provider>
   );
 }
