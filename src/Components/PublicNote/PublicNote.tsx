@@ -1,22 +1,9 @@
 import * as React from "react";
 import { View, Text, TextInput, ScrollView } from "react-native";
 import styles from "../../styles";
-import { NoteProps, RootDrawerParamList } from "../../Interfaces/Interfaces";
-import ButtonCentered from "../Buttons/ButtonCentered/ButtonCentered";
-import { useQueryClient, useMutation } from "react-query";
-import { DeleteNote } from "../Api/Api";
-import { useNavigation } from "@react-navigation/native";
+import { NoteProps } from "../../Interfaces/Interfaces";
 
 export default function PublicNote(props: NoteProps) {
-  const navigation = useNavigation<RootDrawerParamList>();
-  const queryClient = useQueryClient();
-  const mutation = useMutation({
-    mutationFn: DeleteNote,
-    onSuccess: () => {
-      queryClient.invalidateQueries("notes");
-      queryClient.invalidateQueries("public_notes");
-    },
-  });
   return (
     <View style={styles.addnotecont}>
       <View style={styles.tle}>
