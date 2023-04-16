@@ -38,18 +38,21 @@ export default function Notes() {
   } else if (notes.length === 0) {
     return (
       <View>
-        <Text style={styles.no}>No notes exist yet. Make one!</Text>;
-        <View style={styles.homecont}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("New Note");
-            }}
-          >
-            <Text style={styles.newnote}>+</Text>
-          </TouchableOpacity>
+        <Text style={{ ...styles.no, ...{ textAlign: "center" } }}>
+          No notes exist yet. Create one!
+        </Text>
+        <TouchableOpacity
+          style={{
+            ...styles.homecont,
+            ...{ display: "flex", alignSelf: "center" },
+          }}
+          onPress={() => {
+            navigation.navigate("New Note");
+          }}
+        >
+          <Text style={styles.newnote}>+</Text>
           <Text style={styles.no}>New note...</Text>
-          <View style={{ margin: 16 }} />
-        </View>
+        </TouchableOpacity>
       </View>
     );
   }
