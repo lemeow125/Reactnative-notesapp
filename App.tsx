@@ -33,6 +33,7 @@ export default function App() {
          <Drawer.Screen name="User Info" component={UserInfo} />
          <Drawer.Screen name="Login" component={Login} />
          <Drawer.Screen name="Register" component={Register} />
+         <Drawer.Screen name="LogOut" component={Register} />
         
         </Drawer.Navigator>
       </NavigationContainer>

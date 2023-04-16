@@ -13,6 +13,7 @@ import LoginIcon from "../../../Icons/LoginIcon/LoginIcon";
 import SignupIcon from "../../../Icons/SignupIcon/SignupIcon";
 import UserIcon from "../../../Icons/UserIcon/UserIcon";
 import AppIcon from "../../../Icons/AppIcon/AppIcon";
+import LogoutIcon from "../../../Icons/LogoutIcon/LogoutIcon";
 
 export default function CustomDrawerContent(props: {}) {
   const navigation = useNavigation<RootDrawerParamList>();
@@ -30,6 +31,7 @@ export default function CustomDrawerContent(props: {}) {
           Clip Notes
         </Text>
       </View>
+
       <ButtonAlignLeft
         color="Blue"
         width={width}
@@ -40,6 +42,7 @@ export default function CustomDrawerContent(props: {}) {
         <HomeIcon size={32} color="white" />
         <Text style={{ ...styles.text_white, ...{ fontSize: 32 } }}>Home</Text>
       </ButtonAlignLeft>
+
       <ButtonAlignLeft
         color="Green"
         width={width}
@@ -52,6 +55,7 @@ export default function CustomDrawerContent(props: {}) {
           New Note
         </Text>
       </ButtonAlignLeft>
+
       <ButtonAlignLeft
         color="Green"
         width={width}
@@ -62,6 +66,7 @@ export default function CustomDrawerContent(props: {}) {
         <LoginIcon size={32} color="white" />
         <Text style={{ ...styles.text_white, ...{ fontSize: 32 } }}>Login</Text>
       </ButtonAlignLeft>
+
       <ButtonAlignLeft
         color="Yellow"
         width={width}
@@ -74,6 +79,7 @@ export default function CustomDrawerContent(props: {}) {
           User Info
         </Text>
       </ButtonAlignLeft>
+
       <ButtonAlignLeft
         color="Yellow"
         width={width}
@@ -86,6 +92,20 @@ export default function CustomDrawerContent(props: {}) {
           Register
         </Text>
       </ButtonAlignLeft>
+
+      <ButtonAlignLeft
+        color="Red"
+        width={width}
+        onPress={() => {
+          navigation.navigate("Register");
+        }}
+      >
+        <LogoutIcon size={32} color="white" />
+        <Text style={{ ...styles.text_white, ...{ fontSize: 32 } }}>
+          Log Out
+        </Text>
+      </ButtonAlignLeft>
+
     </DrawerContentScrollView>
   );
 }
