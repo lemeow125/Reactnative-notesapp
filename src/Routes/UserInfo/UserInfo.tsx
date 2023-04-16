@@ -3,37 +3,49 @@ import {View, Text} from 'react-native';
 import styles from '../../styles';
 import Background from '../../Components/Background/Background';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import UserIcon from '../../Components/Icons/UserIcon/UserIcon';
-import {TouchableOpacity, TextInput} from "react-native";
-import { useState } from "react";
+import { UserInfo } from '../../Components/Api/Api';
+import { useQuery } from 'react-query';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Features/Redux/Store/Store';
 
-export default function UserInfo() {
-  const [isEditable, setIsEditable] = useState(false);
+export default function UserPage() {
+  const { data, isLoading, error } = useQuery("user", UserInfo, { retry: 0, onSuccess: (data) => console.log(data) });
+  const logged_in = useSelector(
+    (state: RootState) => state.logged_in.value
+  );
+  const logged_in_user = useSelector(
+    (state: RootState) => state.logged_in_user.value
+  );
+  if (isLoading && !error) {
+    return (
+      <View style={styles.background}>
+        <View style={styles.addnotecont}>
+          <Text style={styles.typeinput}>Loading...</Text>
+        </View>
+      </View>
+    );
+  } else if (error) {
+    return (
+      <View style={styles.background}>
+        <View style={styles.addnotecont}>
+          <Text style={styles.typeinput}>An error has occured</Text>
+        </View>
+      </View>
+    );
+  }
   return (
     <Background>
-      <Text style={{...styles.text_white, ...{fontSize: 32}}}></Text>
-      <SafeAreaView>
-      <View style={styles.userinfocont}>  
-        <Text style ={styles.userlabel} > <UserIcon size={32} color="white"/> USER INFO</Text>
-
-        </View>
-      <View style={styles.form}>
-        <View style={styles.inputRow}>
-          <Text style={styles.label}>Username</Text>
-          <TextInput
-            style={[styles.inputUser, !isEditable && styles.disabledInput]}
-            editable={isEditable}
-          />
-          
-        </View>
-        <TouchableOpacity
-          style={styles.editButton}
-          onPress={() => setIsEditable(!isEditable)}
-        >
-          <Text style={styles.buttonText}>{isEditable ? "Save" : "Edit Profile"}</Text>
-        </TouchableOpacity>
+      <View style={styles.addnotecont}>
+        <SafeAreaView>
+          <View style={styles.background}>
+            <View style={styles.title}>
+              <Text style={styles.typeinput}>Username: {logged_in_user.username}</Text>
+              <Text style={styles.typeinput}>Email: {logged_in_user.email}</Text>
+              <Text style={styles.typeinput}>User ID: {logged_in_user.id}</Text>
+            </View>
+          </View>
+        </SafeAreaView>
       </View>
-      </SafeAreaView>
     </Background>
   );
 }
