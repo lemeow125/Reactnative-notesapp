@@ -85,7 +85,12 @@ export default function Login() {
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
           <Text style={styles.text_small_red}>{error}</Text>
-          <TouchableOpacity style={styles.registerbtn}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Register");
+            }}
+            style={styles.registerbtn}
+          >
             <Text style={styles.registertext}>REGISTER</Text>
           </TouchableOpacity>
         </View>
