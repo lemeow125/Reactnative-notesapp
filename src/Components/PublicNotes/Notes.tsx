@@ -8,6 +8,7 @@ import { RootState } from "../../Features/Redux/Store/Store";
 import { NoteProps, RootDrawerParamList } from "../../Interfaces/Interfaces";
 import { useNavigation } from "@react-navigation/native";
 import Note from "../Note/Note";
+import PublicNote from "../PublicNote/PublicNote";
 
 export default function PublicNotes() {
   const navigation = useNavigation<RootDrawerParamList>();
@@ -39,7 +40,7 @@ export default function PublicNotes() {
     <ScrollView contentContainerStyle={{ justifyContent: "center" }}>
       {notes.map((note: NoteProps, index: number) => {
         return (
-          <Note
+          <PublicNote
             id={note.id}
             key={index}
             title={note.title}

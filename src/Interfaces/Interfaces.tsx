@@ -65,4 +65,5 @@ export interface UpdateNoteParams {
   id: number;
   title: string;
   content: string;
+  public: boolean;
 }

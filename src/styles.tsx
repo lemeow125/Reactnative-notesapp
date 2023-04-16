@@ -180,7 +180,8 @@ const styles = StyleSheet.create({
   addnotecont: {
     marginTop: 30,
     marginLeft: 22,
-    height: 500,
+    paddingBottom: 30,
+    minHeight: 500,
     width: 350,
     borderRadius: 25,
     backgroundColor: "black",

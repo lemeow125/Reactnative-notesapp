@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Switch } from "react-native";
 import styles from "../../styles";
 import Background from "../../Components/Background/Background";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -61,58 +61,74 @@ export default function EditNote({ navigation, route }: any) {
         <Text style={{ ...styles.text_white, ...{ fontSize: 32 } }}>
           Edit Note
         </Text>
-        <SafeAreaView>
-          <View style={styles.addnotecont}>
-            <View style={styles.tle}>
-              <TextInput
-                style={styles.title}
-                placeholder="Title"
-                placeholderTextColor="white"
-                value={note.title}
-                onChangeText={(text) => {
-                  setNote({ ...note, title: text });
-                }}
-                maxLength={20}
-              />
-            </View>
-            <View style={styles.typehere}>
-              <TextInput
-                style={styles.typeinput}
-                placeholder="Type here...."
-                placeholderTextColor="white"
-                value={note.content}
-                multiline={true}
-                onChangeText={async (text) => {
-                  await setNote({ ...note, content: text });
-                }}
-              />
-            </View>
-            <TouchableOpacity
-              style={styles.savebtn}
-              onPress={async () => {
-                try {
-                  await mutation.mutate({
-                    title: note.title,
-                    content: note.content,
-                    id: noteId,
-                  });
-                  navigation.navigate("Home");
-                } catch (error) {}
-                console.log(note.content);
+        <View style={styles.addnotecont}>
+          <View style={styles.tle}>
+            <TextInput
+              style={styles.title}
+              placeholder="Title"
+              placeholderTextColor="white"
+              value={note.title}
+              onChangeText={(text) => {
+                setNote({ ...note, title: text });
               }}
-            >
-              <Text style={styles.savenote}>SAVE</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.cancelbtn}
-              onPress={() => {
-                navigation.navigate("Home");
-              }}
-            >
-              <Text style={styles.cancel}>CANCEL</Text>
-            </TouchableOpacity>
+              maxLength={20}
+            />
           </View>
-        </SafeAreaView>
+          <View style={styles.typehere}>
+            <TextInput
+              style={styles.typeinput}
+              placeholder="Type here...."
+              placeholderTextColor="white"
+              value={note.content}
+              multiline={true}
+              onChangeText={async (text) => {
+                await setNote({ ...note, content: text });
+              }}
+            />
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              marginLeft: 16,
+              alignItems: "center",
+            }}
+          >
+            <Switch
+              onValueChange={() => setNote({ ...note, public: !note.public })}
+              value={note.public}
+            />
+            <Text style={{ ...styles.text_white, ...{ fontSize: 16 } }}>
+              Public?
+            </Text>
+          </View>
+          <TouchableOpacity
+            style={styles.savebtn}
+            onPress={async () => {
+              try {
+                await mutation.mutate({
+                  title: note.title,
+                  content: note.content,
+                  public: note.public,
+                  id: noteId,
+                });
+                navigation.navigate("Home");
+              } catch (error) {}
+              console.log(note.content);
+            }}
+          >
+            <Text style={styles.savenote}>SAVE</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.cancelbtn}
+            onPress={() => {
+              navigation.navigate("Home");
+            }}
+          >
+            <Text style={styles.cancel}>CANCEL</Text>
+          </TouchableOpacity>
+        </View>
       </Background>
     );
   }
