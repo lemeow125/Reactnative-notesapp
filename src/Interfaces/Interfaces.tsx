@@ -59,6 +59,7 @@ export interface ActivationParams {
 export interface AddNoteParams {
   title: string;
   content: string;
+  public: boolean;
 }
 
 export interface UpdateNoteParams {

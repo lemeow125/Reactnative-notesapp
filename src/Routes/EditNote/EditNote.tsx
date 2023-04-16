@@ -15,7 +15,7 @@ export default function EditNote({ navigation, route }: any) {
   const [note, setNote] = useState({
     title: "",
     content: "",
-    public: true,
+    public: false,
   });
   async function retrieve() {
     let a = await GetNote(noteId);
