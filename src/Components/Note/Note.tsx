@@ -1,12 +1,14 @@
 import * as React from "react";
 import { View, Text, TextInput, ScrollView } from "react-native";
 import styles from "../../styles";
-import { NoteProps } from "../../Interfaces/Interfaces";
+import { NoteProps, RootDrawerParamList } from "../../Interfaces/Interfaces";
 import ButtonCentered from "../Buttons/ButtonCentered/ButtonCentered";
 import { useQueryClient, useMutation } from "react-query";
 import { DeleteNote } from "../Api/Api";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Note(props: NoteProps) {
+  const navigation = useNavigation<RootDrawerParamList>();
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: DeleteNote,
@@ -45,7 +47,10 @@ export default function Note(props: NoteProps) {
         </ButtonCentered>
         <ButtonCentered
           color={"Yellow"}
-          onPress={() => console.log("Edited note id " + props.id)}
+          onPress={() => {
+            navigation.navigate("EditNote", { noteId: props.id });
+            console.log("Editing note id " + props.id);
+          }}
           width={64}
         >
           <Text style={{ ...styles.text_white, ...{ fontSize: 16 } }}>

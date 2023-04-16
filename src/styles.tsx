@@ -158,9 +158,10 @@ const styles = StyleSheet.create({
   },
   typeinput: {
     color: "white",
-    flex: 1,
-    paddingBottom: 250,
+    marginBottom: 16,
     marginLeft: 5,
+    minHeight: 128,
+    maxHeight: 768,
   },
   title: {
     color: "white",
