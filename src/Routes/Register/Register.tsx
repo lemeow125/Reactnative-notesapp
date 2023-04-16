@@ -51,6 +51,7 @@ export default function Register() {
             onPress={async () => {
               setUsername("");
               setPassword("");
+              setEmail("");
               console.log("heh");
               if (await UserRegister({ username, email, password })) {
                 setFeedback(
