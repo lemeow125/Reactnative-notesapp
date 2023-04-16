@@ -16,7 +16,7 @@ import {
 } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { SetUser } from "../../Features/Redux/Slices/LoggedInUserSlice/LoggedInUserSlice";
-import { SetLoggedIn } from "../../Features/Redux/Store/LoginSlice";
+import { Toggle_Login } from "../../Features/Redux/Slices/LoginSlice/LoginSlice";
 import { UserInfo, UserLogin } from "../../Components/Api/Api";
 import { RootDrawerParamList } from "../../Interfaces/Interfaces";
 
@@ -77,7 +77,7 @@ export default function Login() {
                 password: "",
               });
               if (await UserLogin(user)) {
-                await dispatch(SetLoggedIn());
+                await dispatch(Toggle_Login());
                 await dispatch(SetUser(await UserInfo()));
                 navigation.navigate("Home");
               } else {
