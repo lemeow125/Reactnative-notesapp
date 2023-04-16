@@ -1,26 +1,26 @@
-import * as React from 'react';
-import {View, Text} from 'react-native';
-import styles from '../../styles';
-import Background from '../../Components/Background/Background';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { UserInfo } from '../../Components/Api/Api';
-import { useQuery } from 'react-query';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../Features/Redux/Store/Store';
+import * as React from "react";
+import { View, Text } from "react-native";
+import styles from "../../styles";
+import Background from "../../Components/Background/Background";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { UserInfo } from "../../Components/Api/Api";
+import { useQuery } from "react-query";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Features/Redux/Store/Store";
 
 export default function UserPage() {
-  const { data, isLoading, error } = useQuery("user", UserInfo, { retry: 0, onSuccess: (data) => console.log(data) });
-  const logged_in = useSelector(
-    (state: RootState) => state.logged_in.value
-  );
-  const logged_in_user = useSelector(
-    (state: RootState) => state.logged_in_user.value
-  );
+  const { data, isLoading, error } = useQuery("user", UserInfo, {
+    retry: 0,
+    onSuccess: (data) => console.log(data),
+  });
+  const logged_in = useSelector((state: RootState) => state.logged_in.value);
   if (isLoading && !error) {
     return (
       <View style={styles.background}>
         <View style={styles.addnotecont}>
-          <Text style={styles.typeinput}>Loading...</Text>
+          <Text style={{ ...styles.text_white, ...{ fontSize: 25 } }}>
+            Loading...
+          </Text>
         </View>
       </View>
     );
@@ -28,7 +28,9 @@ export default function UserPage() {
     return (
       <View style={styles.background}>
         <View style={styles.addnotecont}>
-          <Text style={styles.typeinput}>An error has occured</Text>
+          <Text style={{ ...styles.text_white, ...{ fontSize: 25 } }}>
+            An error has occured
+          </Text>
         </View>
       </View>
     );
@@ -36,15 +38,15 @@ export default function UserPage() {
   return (
     <Background>
       <View style={styles.addnotecont}>
-        <SafeAreaView>
-          <View style={styles.background}>
-            <View style={styles.title}>
-              <Text style={styles.typeinput}>Username: {logged_in_user.username}</Text>
-              <Text style={styles.typeinput}>Email: {logged_in_user.email}</Text>
-              <Text style={styles.typeinput}>User ID: {logged_in_user.id}</Text>
-            </View>
-          </View>
-        </SafeAreaView>
+        <Text style={{ ...styles.text_white, ...{ fontSize: 25 } }}>
+          Username: {data.username}
+        </Text>
+        <Text style={{ ...styles.text_white, ...{ fontSize: 25 } }}>
+          Email: {data.email}
+        </Text>
+        <Text style={{ ...styles.text_white, ...{ fontSize: 25 } }}>
+          User ID: {data.id}
+        </Text>
       </View>
     </Background>
   );

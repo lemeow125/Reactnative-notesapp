@@ -66,10 +66,6 @@ export default function Login() {
               }}
             />
           </View>
-
-          <TouchableOpacity>
-            <Text style={styles.forgot_button}>Forgot Password?</Text>
-          </TouchableOpacity>
           <TouchableOpacity
             onPress={async () => {
               setUser({
