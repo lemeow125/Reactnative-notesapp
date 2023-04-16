@@ -14,11 +14,14 @@ import SignupIcon from "../../../Icons/SignupIcon/SignupIcon";
 import UserIcon from "../../../Icons/UserIcon/UserIcon";
 import AppIcon from "../../../Icons/AppIcon/AppIcon";
 import LogoutIcon from "../../../Icons/LogoutIcon/LogoutIcon";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../Features/Redux/Store/Store";
+import { Toggle_Login } from "../../../../Features/Redux/Slices/LoginSlice/LoginSlice";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CustomDrawerContent(props: {}) {
   const navigation = useNavigation<RootDrawerParamList>();
+  const dispatch = useDispatch();
   const width = 224;
   const logged_in = useSelector((state: RootState) => state.logged_in.value);
   const logged_in_user = useSelector(
@@ -82,7 +85,8 @@ export default function CustomDrawerContent(props: {}) {
           color="Red"
           width={width}
           onPress={() => {
-            navigation.navigate("Register");
+            dispatch(Toggle_Login());
+            AsyncStorage.removeItem("token");
           }}
         >
           <LogoutIcon size={32} color="white" />
