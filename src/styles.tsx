@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "lightgreen",
+    backgroundColor: "#0dbc6a",
   },
   registerbtn: {
     width: "80%",
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 40,
-    backgroundColor: "orange",
+    backgroundColor: "#e2b465",
   },
   loginText: {
     color: "white",
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     height: 500,
     width: 350,
     borderRadius: 25,
-    backgroundColor: "blue",
+    backgroundColor: "#0087e4",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   typehere: {
-    backgroundColor: "black",
+    backgroundColor: "#00293e",
     borderRadius: 10,
     width: "75%",
     height: 300,
@@ -173,6 +173,8 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 40,
     marginTop: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
   addnotecont: {
     marginTop: 30,
@@ -180,7 +182,7 @@ const styles = StyleSheet.create({
     height: 500,
     width: 350,
     borderRadius: 25,
-    backgroundColor: "#7cb9e8",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
   },
