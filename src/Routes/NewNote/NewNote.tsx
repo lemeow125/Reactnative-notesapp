@@ -24,6 +24,7 @@ export default function NewNote() {
     mutationFn: AddNote,
     onSuccess: () => {
       queryClient.invalidateQueries("notes");
+      queryClient.invalidateQueries("public_notes");
     },
   });
 
