@@ -7,26 +7,37 @@ import DrawerScreenSettings from "./src/Components/Drawer/DrawerScreenSettings/D
 
 import Home from "./src/Routes/Home/Home";
 import UserInfo from "./src/Routes/UserInfo/UserInfo";
-import AddNote from "./src/Routes/AddNote/AddNote";
+import NewNote from "./src/Routes/NewNote/NewNote";
 import Login from "./src/Routes/Login/Login";
 import Register from "./src/Routes/Register/Register";
+import { Provider } from "react-redux";
+import Store from "./src/Features/Redux/Store/Store";
+import { QueryClient, QueryClientProvider } from "react-query";
+import EditNote from "./src/Routes/EditNote/EditNote";
 
 const Drawer = createDrawerNavigator();
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName="Home"
-        drawerContent={CustomDrawerContent}
-        screenOptions={DrawerScreenSettings}
-      >
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Add Note" component={AddNote} />
-        <Drawer.Screen name="User Info" component={UserInfo} />
-        <Drawer.Screen name="Login" component={Login} />
-        <Drawer.Screen name="Register" component={Register} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <Drawer.Navigator
+            initialRouteName="Home"
+            drawerContent={CustomDrawerContent}
+            screenOptions={DrawerScreenSettings}
+          >
+            <Drawer.Screen name="Home" component={Home} />
+            <Drawer.Screen name="New Note" component={NewNote} />
+            <Drawer.Screen name="User Info" component={UserInfo} />
+            <Drawer.Screen name="Login" component={Login} />
+            <Drawer.Screen name="Register" component={Register} />
+            <Drawer.Screen name="LogOut" component={Register} />
+            <Drawer.Screen name="EditNote" component={EditNote} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
+    </Provider>
   );
 }
